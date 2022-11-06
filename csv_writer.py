@@ -11,7 +11,7 @@ def write_events_overview(events, output_folder="output"):
     """
     create_output_folder(output_folder)
 
-    with open(f"{output_folder}/events.csv", "w") as csv_file:
+    with open(f"{output_folder}/events.csv", "w", encoding="utf-8") as csv_file:
         writer = csv.writer(csv_file)
         header = ["id", "name", "date", "is_remote", "attendance", "rsvps", "waitlist"]
         writer.writerow(header)
@@ -39,7 +39,9 @@ def write_attendee_csv(event, attendees_csv, output_folder="output"):
     """
     create_output_folder(output_folder)
 
-    with open(f"{output_folder}/attendees-{event['id']}.csv", "w") as csv_file:
+    with open(
+        f"{output_folder}/attendees-{event['id']}.csv", "w", encoding="utf-8"
+    ) as csv_file:
         csv.writer(csv_file).writerows(attendees_csv)
 
 

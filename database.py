@@ -110,7 +110,7 @@ def add_event_to_db(connection, event):
         )
         connection.commit()
     except psycopg2.errors.UniqueViolation:
-        print("Event '{}' ({}) already exists in DB".format(event["name"], event["id"]))
+        print(f"Event '{event['name']}' ({event['id']}) already exists in DB")
         connection.rollback()
     cur.close()
 
@@ -140,7 +140,7 @@ def add_users_to_db(connection, event_attendees):
             )
             connection.commit()
         except psycopg2.errors.UniqueViolation:
-            print("User '{}' ({}) already exists in DB".format(name, user_id))
+            print(f"User '{name}' ({user_id}) already exists in DB")
             connection.rollback()
     cur.close()
 
@@ -175,9 +175,7 @@ def add_event_attendance(connection, event_id, event_attendees):
             connection.commit()
         except psycopg2.errors.UniqueViolation:
             print(
-                "Attendance record for event '{}' & user {} already exists in DB".format(
-                    event_id, user_id
-                )
+                f"Attendance record for event '{event_id}' & user {user_id} already exists in DB"
             )
             connection.rollback()
     cur.close()

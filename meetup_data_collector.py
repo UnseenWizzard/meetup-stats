@@ -75,5 +75,7 @@ def http_get(path):
     """http get request to given path sending MEETUP_COOKIE as header"""
     req = Request(path)
     req.add_header("Cookie", MEETUP_COOKIE)
-    contents = urllib.request.urlopen(req).read().decode("utf-8")
+    contents = ""
+    with urllib.request.urlopen(req) as response:
+        contents = response.read().decode("utf-8")
     return contents

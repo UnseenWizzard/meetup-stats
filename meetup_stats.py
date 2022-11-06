@@ -111,4 +111,4 @@ if __name__ == "__main__":
             args.meetup, args.db_host, args.db_port, args.db_user, args.db_pw
         )
     else:
-        print("unknown command '{}' - needs to be 'csv' or 'db'".format(args.command))
+        print(f"unknown command '{args.command}' - needs to be 'csv' or 'db'")
