@@ -29,5 +29,5 @@ jobs:
 
     - name: Release the Docker image
       run: |
-        docker build . --file Dockerfile --tag ${{ REGISTRY }}/${{ IMAGE_NAME }}:${{ env.version }}
-        docker push ${{ REGISTRY }}/${{ IMAGE_NAME }}:${{ env.version }}
+        docker build . --file Dockerfile --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.version }}
+        docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.version }}
