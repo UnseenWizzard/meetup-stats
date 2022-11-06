@@ -12,4 +12,4 @@ RUN \
 
 COPY . .
 
-ENTRYPOINT ["python3", "meetup-stats.py"]
+ENTRYPOINT ["python3", "meetup_stats.py"]

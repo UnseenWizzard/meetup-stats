@@ -34,8 +34,8 @@ Attendee data per event:
 To run locally you need python3 and installed requirements (pip3 install -r requirements.tx).
 
 ```shell
-python3 meetup-stats.py -h
-usage: meetup-stats.py [-h] [--csv-outputfolder CSV_OUTPUTFOLDER] [--db-host DB_HOST] [--db-port DB_PORT] [--db-user DB_USER] [--db-pw DB_PW] meetup command
+python3 meetup_stats.py -h
+usage: meetup_stats.py [-h] [--csv-outputfolder CSV_OUTPUTFOLDER] [--db-host DB_HOST] [--db-port DB_PORT] [--db-user DB_USER] [--db-pw DB_PW] meetup command
 
 positional arguments:
   meetup                The meetup to query for. This needs to be the identifier found in the meetup group's url path.
@@ -60,7 +60,7 @@ optional arguments:
 ## Exporting to CSV
 
 ```shell
-python3 meetup-stats.py my-sample-meetup csv
+python3 meetup_stats.py my-sample-meetup csv
 ```
 
 ## Exporting to postgres
@@ -74,7 +74,7 @@ docker run --name meetup-postgres -e POSTGRES_DB=my-sample-meetup -e POSTGRES_PA
 
 Then run the script to write to the DB:
 ```shell
-python3 meetup-stats.py my-sample-meetup db --db-pw mysecretpassword
+python3 meetup_stats.py my-sample-meetup db --db-pw mysecretpassword
 ```
 
 # Querying Data from the Database
